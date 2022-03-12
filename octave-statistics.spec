@@ -1,13 +1,13 @@
-%define octpkg statistics
+%global octpkg statistics
 
 Summary:	Additional statistics functions for Octave
 Name:		octave-%{octpkg}
-Version:	1.3.0
+Version:	1.4.3
 Release:	1
+Url:		https://octave.sourceforge.io/%{octpkg}/
 Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+ and Public Domain
 Group:		Sciences/Mathematics
-Url:		https://octave.sourceforge.io/%{octpkg}/
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.0.0
@@ -23,14 +23,29 @@ Additional statistics functions for Octave.
 
 This package is part of community Octave-Forge collection.
 
+%files
+%license COPYING
+%doc NEWS
+%dir %{octpkgdir}
+%{octpkgdir}/*
+%{_metainfodir}/*.metainfo.xml
+
+#---------------------------------------------------------------------------
+
 %prep
-%setup -qcT
+%autosetup -p1 -n %{octpkg}-%{version}
+
+# remove backup files
+#find . -name \*~ -delete
 
 %build
-%octave_pkg_build -T
+%octave_pkg_build
 
 %install
 %octave_pkg_install
+
+%check
+%octave_pkg_check
 
 %post
 %octave_cmd pkg rebuild
@@ -40,10 +55,4 @@ This package is part of community Octave-Forge collection.
 
 %postun
 %octave_cmd pkg rebuild
-
-%files
-%dir %{octpkgdir}
-%{octpkgdir}/*
-%doc %{octpkg}-%{version}/NEWS
-%doc %{octpkg}-%{version}/COPYING
 
