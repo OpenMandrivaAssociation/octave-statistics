@@ -3,18 +3,19 @@
 Summary:	Additional statistics functions for Octave
 Name:		octave-%{octpkg}
 Version:	1.4.3
-Release:	1
+Release:	2
 Url:		https://octave.sourceforge.io/%{octpkg}/
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+ and Public Domain
 Group:		Sciences/Mathematics
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 4.0.0
+BuildRequires:	octave-io >= 1.0.18
 
 Requires:	octave(api) = %{octave_api}
-Requires:	octave-io >= 1.0.18
 
+Requires:	octave-io >= 1.0.18
 Requires(post): octave
 Requires(postun): octave
 
