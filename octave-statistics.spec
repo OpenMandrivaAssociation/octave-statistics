@@ -4,7 +4,7 @@ Summary:	Additional statistics functions for Octave
 Name:		octave-%{octpkg}
 Version:	1.4.3
 Release:	2
-Url:		https://octave.sourceforge.io/%{octpkg}/
+Url:		https://packages.octave.org/%{octpkg}/
 Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+ and Public Domain
 Group:		Sciences/Mathematics
@@ -21,8 +21,6 @@ Requires(postun): octave
 
 %description
 Additional statistics functions for Octave.
-
-This package is part of community Octave-Forge collection.
 
 %files
 %license COPYING
