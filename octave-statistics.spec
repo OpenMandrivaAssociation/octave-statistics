@@ -1,21 +1,20 @@
 %global octpkg statistics
 
-Summary:	Additional statistics functions for Octave
-Name:		octave-%{octpkg}
-Version:	1.4.3
-Release:	2
-Url:		https://packages.octave.org/%{octpkg}/
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
-License:	GPLv3+ and Public Domain
+Summary:	The Statistics package for GNU Octave
+Name:		octave-statistics
+Version:	1.5.4
+Release:	1
+License:	GPLv3+
 Group:		Sciences/Mathematics
-BuildArch:	noarch
+#Url:		https://packages.octave.org/statistics/
+Url:		https://github.com/gnu-octave/statistics/
+Source0:	https://github.com/gnu-octave/statistics/archive/refs/tags/release-%{version}/statistics-%{version}.tar.gz
+#Source0:	https://github.com/gnu-octave/statistics/releases/statistics-release-%{version}.tar.gz
 
-BuildRequires:	octave-devel >= 4.0.0
-BuildRequires:	octave-io >= 1.0.18
+BuildRequires:  octave-devel >= 6.1.0
 
 Requires:	octave(api) = %{octave_api}
 
-Requires:	octave-io >= 1.0.18
 Requires(post): octave
 Requires(postun): octave
 
@@ -27,17 +26,16 @@ Additional statistics functions for Octave.
 %doc NEWS
 %dir %{octpkgdir}
 %{octpkgdir}/*
-%{_metainfodir}/*.metainfo.xml
+%dir %{octpkglibdir}
+%{octpkglibdir}/*
 
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{octpkg}-%{version}
-
-# remove backup files
-#find . -name \*~ -delete
+%autosetup -p1 -n %{octpkg}-release-%{version}
 
 %build
+%set_build_flags
 %octave_pkg_build
 
 %install
