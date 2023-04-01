@@ -9,7 +9,6 @@ Group:		Sciences/Mathematics
 #Url:		https://packages.octave.org/statistics/
 Url:		https://github.com/gnu-octave/statistics/
 Source0:	https://github.com/gnu-octave/statistics/archive/refs/tags/release-%{version}/statistics-%{version}.tar.gz
-#Source0:	https://github.com/gnu-octave/statistics/releases/statistics-release-%{version}.tar.gz
 
 BuildRequires:  octave-devel >= 6.1.0
 
