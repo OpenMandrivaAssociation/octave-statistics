@@ -2,7 +2,7 @@
 
 Summary:	The Statistics package for GNU Octave
 Name:		octave-statistics
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
