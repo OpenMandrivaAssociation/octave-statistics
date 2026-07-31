@@ -2,7 +2,7 @@
 
 Summary:	The Statistics package for GNU Octave
 Name:		octave-statistics
-Version:	1.7.4
+Version:	1.8.4
 Release:	1
 License:	GPLv3+
 Group:		Sciences/Mathematics
@@ -31,7 +31,7 @@ Additional statistics functions for Octave.
 #---------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{octpkg}-release-%{version}
+%autosetup -p1 -n statistics-release-1.8.4
 
 %build
 %set_build_flags
